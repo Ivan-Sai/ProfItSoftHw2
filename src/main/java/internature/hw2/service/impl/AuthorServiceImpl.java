@@ -17,16 +17,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service implementation for managing authors.
+ */
+
 @Service
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;
-
-    @Autowired
-    @Lazy
     private final BookService bookService;
 
+    /**
+     * Retrieves an author by name. If the author does not exist, a new one is created.
+     */
     @Override
     public Author getAuthorFromName(String authorName) {
         return authorRepository.findByName(WordUtils.capitalizeFully(authorName.toLowerCase())).orElseGet(() -> {
@@ -66,6 +70,9 @@ public class AuthorServiceImpl implements AuthorService {
 
     }
 
+    /**
+     * Use bookService to set author null and then deletes an author by its ID.
+     */
     @Override
     public void deleteAuthor(Long id) {
         bookService.deleteBooksAuthor(id);
@@ -73,9 +80,9 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     private ResponseAuthorDto mapAuthorToResponseAuthorDto(Author author) {
-        ResponseAuthorDto responseAuthorDto = new ResponseAuthorDto();
-        responseAuthorDto.setId(author.getId());
-        responseAuthorDto.setName(author.getName());
-        return responseAuthorDto;
+        return ResponseAuthorDto.builder()
+                .id(author.getId())
+                .name(author.getName())
+                .build();
     }
 }

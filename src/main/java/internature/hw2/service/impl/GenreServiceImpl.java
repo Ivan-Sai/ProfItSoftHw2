@@ -16,6 +16,10 @@ import java.util.List;
 public class GenreServiceImpl implements GenreService {
 
     private final GenreRepository genreRepository;
+
+    /**
+     * Retrieves an genre by name. If the genre does not exist, a new one is created.
+     */
     @Override
     public List<Genre> getGenresFromNameList(List<String> genres) {
         List<Genre> result = new ArrayList<>();

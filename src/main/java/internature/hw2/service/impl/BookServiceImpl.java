@@ -32,6 +32,9 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Service implementation for managing books.
+ */
 @Service
 @RequiredArgsConstructor
 public class BookServiceImpl implements BookService {
