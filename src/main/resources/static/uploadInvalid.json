@@ -1,0 +1,96 @@
+[
+  {
+    "yearPublished": 1890,
+    "genres": [
+      "Gothic Fiction",
+      "Philosophical Novel"
+    ],
+    "authorName": "Oscar Wilde",
+    "pages": 237
+  },
+  {
+    "title": "Frankenstein",
+    "yearPublished": 1818,
+    "genres": [
+      "Gothic",
+      "Science Fiction"
+    ],
+    "authorName": "Mary Shelley"
+  },
+  {
+    "title": "Les Misérables",
+    "yearPublished": 1862,
+    "genres": [
+      "Historical Fiction",
+      "Epic Novel"
+    ],
+    "authorName": "Victor Hugo",
+    "pages": 1488
+  },
+  {
+    "title": "1984",
+    "yearPublished": 1949,
+    "genres": [
+      "Dystopian",
+      "Political Fiction"
+    ],
+    "authorName": "George Orwell",
+    "pages": 328
+  },
+  {
+    "title": "Wuthering Heights",
+    "yearPublished": 1847,
+
+    "authorName": "Emily Brontë",
+    "pages": 384
+  },
+  {
+    "title": "The Odyssey",
+    "yearPublished": -800,
+    "genres": [
+      "Epic Poetry",
+      "Mythology"
+    ],
+    "authorName": "Homer",
+    "pages": 475
+  },
+  {
+    "title": "Dracula",
+    "yearPublished": 1897,
+    "genres": [
+      "Gothic Fiction",
+      "Horror"
+    ],
+    "authorName": "Bram Stoker",
+    "pages": 418
+  },
+  {
+    "title": "The Adventures of Huckleberry Finn",
+    "yearPublished": 1884,
+    "genres": [
+      "Adventure",
+      "Satire"
+    ],
+    "pages": 366
+  },
+  {
+    "title": "The Scarlet Letter",
+    "yearPublished": 1850,
+    "genres": [
+      "Romance",
+      "Historical Fiction"
+    ],
+    "authorName": "Nathaniel Hawthorne",
+    "pages": 245
+  },
+  {
+    "title": "The Bell Jar",
+    "yearPublished": 1963,
+    "genres": [
+      "Semi-autobiographical",
+      "Psychological Fiction"
+    ],
+    "authorName": "Sylvia Plath",
+    "pages": 288
+  }
+]

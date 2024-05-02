@@ -1,0 +1,102 @@
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "yearPublished": 1960,
+    "genres": [
+      "Southern Gothic",
+      "Bildungsroman"
+    ],
+    "authorName": "Harper Lee",
+    "pages": 281
+  },
+  {
+    "title": "Pride and Prejudice",
+    "yearPublished": 1813,
+    "genres": [
+      "Romantic Novel",
+      "Social Satire"
+    ],
+    "authorName": "Jane Austen",
+    "pages": 279
+  },
+  {
+    "title": "Moby-Dick",
+    "yearPublished": 1851,
+    "genres": [
+      "Adventure",
+      "Epic Novel"
+    ],
+    "authorName": "Herman Melville",
+    "pages": 635
+  },
+  {
+    "title": "War and Peace",
+    "yearPublished": 1869,
+    "genres": [
+      "Historical Fiction",
+      "Philosophical Novel"
+    ],
+    "authorName": "Leo Tolstoy",
+    "pages": 1225
+  },
+  {
+    "title": "The Great Gatsby",
+    "yearPublished": 1925,
+    "genres": [
+      "Historical Fiction",
+      "Philosophical Novel"
+    ],
+    "authorName": "F. Scott Fitzgerald",
+    "pages": 180
+  },
+  {
+    "title": "Don Quixote",
+    "yearPublished": 1605,
+    "genres": [
+      "Chivalric Romance",
+      "Satire"
+    ],
+    "authorName": "Miguel de Cervantes",
+    "pages": 863
+  },
+  {
+    "title": "Ulysses",
+    "yearPublished": 1922,
+    "genres": [
+      "Modernist Novel",
+      "Stream of Consciousness"
+    ],
+    "authorName": "James Joyce",
+    "pages": 730
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "yearPublished": 1951,
+    "genres": [
+      "Realistic Fiction",
+      "Coming-of-Age Fiction"
+    ],
+    "authorName": "J. D. Salinger",
+    "pages": 277
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "yearPublished": 1967,
+    "genres": [
+      "Magic Realism",
+      "Family Saga"
+    ],
+    "authorName": "Gabriel García Márquez",
+    "pages": 417
+  },
+  {
+    "title": "The Lord of the Rings",
+    "yearPublished": 1954,
+    "genres": [
+      "High Fantasy",
+      "Adventure"
+    ],
+    "authorName": "J. R. R. Tolkien",
+    "pages": 1200
+  }
+]

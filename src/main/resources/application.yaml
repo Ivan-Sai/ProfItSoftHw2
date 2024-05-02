@@ -1,0 +1,13 @@
+spring:
+  liquibase:
+    change-log: liquibase-changelog.xml
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: hw2
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dz2
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
