@@ -12,7 +12,11 @@ import internature.hw2.repository.BookRepository;
 import internature.hw2.service.AuthorService;
 import internature.hw2.service.BookService;
 import internature.hw2.service.GenreService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import lombok.RequiredArgsConstructor;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -41,6 +45,7 @@ public class BookServiceImpl implements BookService {
 
     private final BookRepository bookRepository;
     private final GenreService genreService;
+    private final EntityManager entityManager;
 
     private AuthorService authorService;
     @Autowired
@@ -53,6 +58,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public ResponseBookDto createBook(CreateRequestBookDto createBookDto) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Book> cr = cb.createQuery(Book.class);
+        Root<Book> root = cr.from(Book.class);
+        cr.select(root);
+        cr.where(cb.equal(root.get("title"),createBookDto.getTitle()));
+
         Book book = new Book();
         book.setTitle(createBookDto.getTitle());
         book.setYearPublished(createBookDto.getYearPublished());
@@ -70,7 +81,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void updateBook(long id, UpdateRequestBookDto updateBookDto) {
+    public ResponseBookDto updateBook(long id, UpdateRequestBookDto updateBookDto) {
         Book book = bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException(id));
         if (updateBookDto.getTitle() != null) {
             book.setTitle(updateBookDto.getTitle());
@@ -87,7 +98,7 @@ public class BookServiceImpl implements BookService {
         if (updateBookDto.getPages() != null) {
             book.setPages(updateBookDto.getPages());
         }
-        bookRepository.save(book);
+        return buildResponseBookDto(bookRepository.save(book));
     }
 
     @Override
@@ -226,6 +237,7 @@ public class BookServiceImpl implements BookService {
 
     private ListResponseBookDto buildListResponseBookDto(Book book) {
         return ListResponseBookDto.builder()
+                .id(book.getId())
                 .title(book.getTitle())
                 .authorName(book.getAuthor().getName())
                 .yearPublished(book.getYearPublished())

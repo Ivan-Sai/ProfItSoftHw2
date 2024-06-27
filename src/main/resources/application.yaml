@@ -1,4 +1,12 @@
 spring:
+  config:
+    import: optional:consul:/
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}:${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+        service-name: ${spring.application.name}
+
   liquibase:
     change-log: liquibase-changelog.xml
   jpa:
@@ -11,3 +19,22 @@ spring:
     username: postgres
     password: 123
     driver-class-name: org.postgresql.Driver
+  kafka:
+    consumer:
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: internature.brokerks.*
+    bootstrap-servers: localhost:9093
+    producer:
+      client-id: ${spring.application.name}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+kafka:
+  topic:
+    email: emailSend
+
+server:
+  port: 8080
