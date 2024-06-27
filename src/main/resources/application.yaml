@@ -15,9 +15,9 @@ spring:
   application:
     name: hw2
   datasource:
-    url: jdbc:postgresql://localhost:5432/dz2
-    username: postgres
-    password: 123
+    url: jdbc:postgresql://dpg-cpunm8aj1k6c738e7fmg-a.frankfurt-postgres.render.com/db_8c8t
+    username: user
+    password: 8p4EpesaV3FD8935N9EbKcMIW0DLRhk3
     driver-class-name: org.postgresql.Driver
   kafka:
     consumer:
