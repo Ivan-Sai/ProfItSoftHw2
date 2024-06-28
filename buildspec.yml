@@ -9,14 +9,12 @@ phases:
       - REPOSITORY_URI=891377090882.dkr.ecr.eu-north-1.amazonaws.com/hw2-repository
       - echo setting image tag...
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
-      - echo Making gradlew executable
-      - chmod +x ./gradlew
 
   build:
     commands:
       - echo building and tagging started image on `date`
       - echo running gradle clean build...
-      - ./gradlew clean build
+      - gradle clean build
       - echo building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - echo tagging the Docker image...
