@@ -1,11 +1,6 @@
 spring:
   config:
     import: optional:consul:/
-  cloud:
-    consul:
-      discovery:
-        instance-id: ${spring.application.name}:${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
-        service-name: ${spring.application.name}
 
   liquibase:
     change-log: liquibase-changelog.xml
