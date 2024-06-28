@@ -9,6 +9,8 @@ phases:
       - REPOSITORY_URI=891377090882.dkr.ecr.eu-north-1.amazonaws.com/hw2-repository
       - echo setting image tag...
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - echo Making gradlew executable
+      - chmod +x ./gradlew
 
   build:
     commands:
