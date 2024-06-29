@@ -29,10 +29,7 @@ public class BookController {
 
 //    private final KafkaTemplate<String,Object> kafkaTemplate;
 
-    @GetMapping("/health")
-    public ResponseEntity<String> health() {
-        return ResponseEntity.ok("OK");
-    }
+
 
     @PostMapping()
     public ResponseEntity<ResponseBookDto> createBook(@Valid @RequestBody CreateRequestBookDto createBookDto) {
