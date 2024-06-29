@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
+//import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,10 +24,10 @@ public class BookController {
 
     private final BookService bookService;
 
-    @Value("${kafka.topic.email}")
-    private String emailTopic;
+//    @Value("${kafka.topic.email}")
+//    private String emailTopic;
 
-    private final KafkaTemplate<String,Object> kafkaTemplate;
+//    private final KafkaTemplate<String,Object> kafkaTemplate;
 
     @GetMapping("/health")
     public ResponseEntity<String> health() {
@@ -37,7 +37,7 @@ public class BookController {
     @PostMapping()
     public ResponseEntity<ResponseBookDto> createBook(@Valid @RequestBody CreateRequestBookDto createBookDto) {
         ResponseBookDto responseBookDto = bookService.createBook(createBookDto);
-        kafkaTemplate.send(emailTopic, responseBookDto.getTitle());
+//        kafkaTemplate.send(emailTopic, responseBookDto.getTitle());
         return ResponseEntity.status(HttpStatus.CREATED).body(bookService.createBook(createBookDto));
     }
 
